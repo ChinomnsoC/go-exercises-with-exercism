@@ -1,17 +1,26 @@
 package raindrops
 
+import "strconv"
+
+const Pling string = "Pling"
+const Plang string = "Plang"
+const Plong string = "Plong"
+
+
 func Convert(number int) string {
-	panic("Please implement the Convert function")
-}
+	var answer string
+	if number%3 == 0 {
+		answer += Pling
+	} 
+	if number%5 == 0 {
+		answer += Plang
+	}
+	if number%7 == 0 {
+		answer += Plong
+	}
 
-func isDivisibleBy3(number int) bool {
-	return number%3 == 0
-}
-
-func isDivisibleBy5(number int) bool {
-	return number%5 == 0
-}
-
-func isDivisibleBy7(number int) bool {
-	return number%7 == 0
+	if len(answer) == 0 {
+		answer = strconv.Itoa(number)
+	}
+	return answer
 }
